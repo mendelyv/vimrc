@@ -6,7 +6,7 @@ set showcmd "状态栏显示目前所执行的指令
 set tabstop=4 "设定tab长度为4
 set softtabstop=4 "使得退格键可以一次删掉4个空格
 set shiftwidth=4 "设定<<和>>命令移动时的宽度为4
-set nonumber "显示行号
+set number "显示行号
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
 set autoindent "自动缩进
