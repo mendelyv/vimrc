@@ -1,69 +1,46 @@
-colorscheme elflord
 syntax on
-set nocompatible              " be iMproved, required
-filetype on                  " required
-set laststatus=2
-set ai!
-set shiftwidth=4
-set nu!
-set tabstop=4
-set hlsearch
-set incsearch
-"""""新文件标题""""""""""""""""""""""""""""""""""
-"新建.c,.h,.sh,.java文件，自动插入文件头
+set nocompatible "关闭vi兼容模式
+set re=0
+set wildmenu "命令模式自动补全
+set showcmd "状态栏显示目前所执行的指令
+set tabstop=4 "设定tab长度为4
+set softtabstop=4 "使得退格键可以一次删掉4个空格
+set shiftwidth=4 "设定<<和>>命令移动时的宽度为4
+set nonumber "显示行号
+set smartindent "开启新行时使用智能缩进
+set cursorline "突出当前行
+set autoindent "自动缩进
+set autoread "硬盘文件变化后自动读取
+set ruler "显示标尺
+set scrolloff=5 "光标在buffer中移动与顶部和底部保持5行距离
+set showmatch "显示括号匹配
+set autochdir "当前文件目录随着被编辑的文件改变做改变
+set ignorecase "忽略大小写
+set smartcase "搜索词中有大写字母，则停止忽略
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 "设置文件支持编码
+set encoding=utf-8
+set termencoding=utf-8
+set history=40 "修改默认记录操作历史条目数量
 
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java,*.cc,*.py exec ":call SetTitle()"
+colorscheme molokai "主题
 
-""定义函数SetTitle，自动插入文件头
+"vim包管理工具Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim' "插件管理器
+Plugin 'preservim/nerdtree' "文件目录树
+Plugin 'ycm-core/YouCompleteMe' "自动补全插件，语言库更新记得重新编译
+Plugin 'vim-airline/vim-airline' "丰富状态行显示插件
+Plugin 'marijnh/tern_for_vim' "js补全插件
+Plugin 'jiangmiao/auto-pairs' "括号自动匹配插件
+Plugin 'ctrlpvim/ctrlp.vim' "模糊搜索插件
+call vundle#end()
+filetype plugin indent on "运行vim加载文件类型插件
 
-func SetTitle()
-
-    "如果文件类型为.sh文件
-    if &filetype == 'sh'
-        call setline(1,"\#########################################################################")
-
-        call append(line("."), "\# File Name: ".expand("%"))
-
-        call append(line(".")+1, "\# Author: Ran")
-
-        call append(line(".")+2, "\# mail: 1064137887@qq.com")
-
-        call append(line(".")+3, "\# Created Time: ".strftime("%c"))
-
-        call append(line(".")+4, "\#########################################################################")
-
-        call append(line(".")+5, "\#!/bin/bash")
-
-        call append(line(".")+6, "")
-
-    else
-
-        call setline(1, "/*************************************************************************")
-
-        call append(line("."), "    > File Name: ".expand("%"))
-
-        call append(line(".")+1, "    > Author: Ran")
-
-        call append(line(".")+2, "    > Mail: 1064137887@qq.com")
-
-        call append(line(".")+3, "    > Created Time: ".strftime("%c"))
-
-        call append(line(".")+4, " ************************************************************************/")
-
-        call append(line(".")+5, "")
-
-    endif
-
-    "新建文件后，自动定位到文件末尾
-    autocmd BufNewFile * normal G
-endfunc
-"""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Auto compelte
-" . : current buffer
-" w : from other windows
-" b : from the buffer list
-" u : unloaded from the buffer list
-" t : tag completion
-" current and included files
-set complete=.,w,b,u,t,i
+"======================YCM CONFIG=======================
+let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
+let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
+let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
+let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项                                    
+let g:ycm_seed_identifiers_with_syntax=1 "语法关键字补全
+"======================YCM CONFIG=======================
