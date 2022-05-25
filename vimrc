@@ -1,4 +1,4 @@
-syntax on
+syntax on 
 set nocompatible "关闭vi兼容模式
 set re=0
 set wildmenu "命令模式自动补全
@@ -31,9 +31,11 @@ Plugin 'gmarik/Vundle.vim' "插件管理器
 Plugin 'preservim/nerdtree' "文件目录树
 Plugin 'ycm-core/YouCompleteMe' "自动补全插件，语言库更新记得重新编译
 Plugin 'vim-airline/vim-airline' "丰富状态行显示插件
-Plugin 'marijnh/tern_for_vim' "js补全插件
+"Plugin 'marijnh/tern_for_vim' "js补全插件
 Plugin 'jiangmiao/auto-pairs' "括号自动匹配插件
 Plugin 'ctrlpvim/ctrlp.vim' "模糊搜索插件
+Plugin 'leafgarland/typescript-vim' "ts补全插件
+"Plugin 'pangloss/vim-javascript' "js补全插件
 call vundle#end()
 filetype plugin indent on "运行vim加载文件类型插件
 
@@ -41,6 +43,11 @@ filetype plugin indent on "运行vim加载文件类型插件
 let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
 let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
 let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
-let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项                                    
+let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1 "语法关键字补全
 "======================YCM CONFIG=======================
+"======================VIM_JAVASCRIPT CONFIG=======================
+"let g:javascript_plugin_jsdoc=1 "为jsdoc文档启动语法高亮
+"let g:javascript_plugin_ngdoc=1 "为ngdoc启用语法高亮
+"let g:javascript_plugin_flow=1 "为flow启用语法高亮
+"======================VIM_JAVASCRIPT CONFIG=======================
