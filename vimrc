@@ -1,6 +1,6 @@
 syntax on 
 set nocompatible "关闭vi兼容模式
-set re=0
+set re=0 "设置vim正则表达式引擎,避免打开特定语言的文本时卡顿或卡死
 set wildmenu "命令模式自动补全
 set showcmd "状态栏显示目前所执行的指令
 set tabstop=4 "设定tab长度为4
