@@ -21,6 +21,7 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 "设置文件支持编�
 set encoding=utf-8
 set termencoding=utf-8
 set history=40 "修改默认记录操作历史条目数量
+set backspace=2 "增加退格键可删除的内容
 
 colorscheme molokai "主题
 
@@ -31,7 +32,7 @@ Plugin 'gmarik/Vundle.vim' "插件管理器
 Plugin 'preservim/nerdtree' "文件目录树
 Plugin 'ycm-core/YouCompleteMe' "自动补全插件，语言库更新记得重新编译
 Plugin 'vim-airline/vim-airline' "丰富状态行显示插件
-"Plugin 'marijnh/tern_for_vim' "js补全插件
+Plugin 'marijnh/tern_for_vim' "js补全插件
 Plugin 'jiangmiao/auto-pairs' "括号自动匹配插件
 Plugin 'ctrlpvim/ctrlp.vim' "模糊搜索插件
 Plugin 'leafgarland/typescript-vim' "ts补全插件
@@ -44,7 +45,8 @@ let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
 let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
 let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
 let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_seed_identifiers_with_syntax=1 "语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1 "是否开启语义补全
+let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口
 "======================YCM CONFIG=======================
 "======================VIM_JAVASCRIPT CONFIG=======================
 "let g:javascript_plugin_jsdoc=1 "为jsdoc文档启动语法高亮
