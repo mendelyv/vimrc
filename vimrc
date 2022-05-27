@@ -1,8 +1,7 @@
 syntax on 
 set nocompatible "关闭vi兼容模式
 set re=0 "设置vim正则表达式引擎,避免打开特定语言的文本时卡顿或卡死
-set wildmenu "命令模式自动补全
-set showcmd "状态栏显示目前所执行的指令
+set wildmenu "命令模式自动补全 set showcmd "状态栏显示目前所执行的指令
 set tabstop=4 "设定tab长度为4
 set softtabstop=4 "使得退格键可以一次删掉4个空格
 set shiftwidth=4 "设定<<和>>命令移动时的宽度为4
@@ -22,6 +21,10 @@ set encoding=utf-8
 set termencoding=utf-8
 set history=40 "修改默认记录操作历史条目数量
 set backspace=2 "增加退格键可删除的内容
+set nobackup "不需要创建备份文件
+set noswapfile "不创建临时交换文件
+set nowritebackup "编辑时不需要备份文件
+set noundofile "不创建撤销文件
 
 colorscheme molokai "主题
 
@@ -40,16 +43,21 @@ Plugin 'leafgarland/typescript-vim' "ts补全插件
 call vundle#end()
 filetype plugin indent on "运行vim加载文件类型插件
 
-"======================YCM CONFIG=======================
+"======================YCM config=======================
 let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
 let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
 let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
 let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1 "是否开启语义补全
 let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口
-"======================YCM CONFIG=======================
-"======================VIM_JAVASCRIPT CONFIG=======================
+"======================YCM config=======================
+"======================vim-javascript config=======================
 "let g:javascript_plugin_jsdoc=1 "为jsdoc文档启动语法高亮
 "let g:javascript_plugin_ngdoc=1 "为ngdoc启用语法高亮
 "let g:javascript_plugin_flow=1 "为flow启用语法高亮
-"======================VIM_JAVASCRIPT CONFIG=======================
+"======================vim_javascript config=======================
+"======================NERDTree config=======================
+map <leader>b :NERDTree<CR>
+map <leader>t :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1 "显示隐藏文件
+"======================NERDTree config=======================
