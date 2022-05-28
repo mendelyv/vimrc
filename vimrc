@@ -25,6 +25,9 @@ set nobackup "不需要创建备份文件
 set noswapfile "不创建临时交换文件
 set nowritebackup "编辑时不需要备份文件
 set noundofile "不创建撤销文件
+set foldmethod=indent "基于缩进代码折叠
+"set foldmethod=syntax "基于语法代码折叠
+set nofoldenable "启动vim关闭折叠代码
 
 colorscheme molokai "主题
 
