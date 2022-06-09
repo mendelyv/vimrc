@@ -1,3 +1,4 @@
+syntax enable
 syntax on 
 set nocompatible "关闭vi兼容模式
 set re=0 "设置vim正则表达式引擎,避免打开特定语言的文本时卡顿或卡死
@@ -8,6 +9,7 @@ set shiftwidth=4 "设定<<和>>命令移动时的宽度为4
 set number "显示行号
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
+set cursorcolumn
 set autoindent "自动缩进
 set autoread "硬盘文件变化后自动读取
 set ruler "显示标尺
@@ -29,20 +31,22 @@ set foldmethod=indent "基于缩进代码折叠
 "set foldmethod=syntax "基于语法代码折叠
 set nofoldenable "启动vim关闭折叠代码
 
-colorscheme molokai "主题
+colorscheme molokai
 
 "vim包管理工具Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim' "插件管理器
 Plugin 'preservim/nerdtree' "文件目录树
-Plugin 'ycm-core/YouCompleteMe' "自动补全插件，语言库更新记得重新编译
+"Plugin 'ycm-core/YouCompleteMe' "自动补全插件，语言库更新记得重新编译
 Plugin 'vim-airline/vim-airline' "丰富状态行显示插件
-Plugin 'marijnh/tern_for_vim' "js补全插件
+"Plugin 'marijnh/tern_for_vim' "js补全插件
 Plugin 'jiangmiao/auto-pairs' "括号自动匹配插件
 Plugin 'ctrlpvim/ctrlp.vim' "模糊搜索插件
-Plugin 'leafgarland/typescript-vim' "ts补全插件
+"Plugin 'leafgarland/typescript-vim' "ts补全插件
+Plugin 'davidklsn/vim-sialoquent'
 "Plugin 'pangloss/vim-javascript' "js补全插件
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 filetype plugin indent on "运行vim加载文件类型插件
 
