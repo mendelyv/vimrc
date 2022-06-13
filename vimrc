@@ -7,6 +7,7 @@ set tabstop=4 "设定tab长度为4
 set softtabstop=4 "使得退格键可以一次删掉4个空格
 set shiftwidth=4 "设定<<和>>命令移动时的宽度为4
 set number "显示行号
+set relativenumber
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
 set cursorcolumn
@@ -30,8 +31,9 @@ set noundofile "不创建撤销文件
 set foldmethod=indent "基于缩进代码折叠
 "set foldmethod=syntax "基于语法代码折叠
 set nofoldenable "启动vim关闭折叠代码
+set termguicolors
 
-colorscheme molokai
+"colorscheme molokai
 
 "vim包管理工具Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,16 +49,23 @@ Plugin 'ctrlpvim/ctrlp.vim' "模糊搜索插件
 Plugin 'davidklsn/vim-sialoquent'
 "Plugin 'pangloss/vim-javascript' "js补全插件
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'sainnhe/everforest',
 call vundle#end()
 filetype plugin indent on "运行vim加载文件类型插件
 
+colorscheme everforest
+
+"======================keymapping=======================
+let mapleader=";"
+"======================keymapping=======================
+
 "======================YCM config=======================
-let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
-let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
-let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
-let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_seed_identifiers_with_syntax=1 "是否开启语义补全
-let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口
+"let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
+"let g:ycm_collect_identifiers_from_tags_files=1 "开启YCM基于标签引擎
+"let g:ycm_min_num_of_chars_for_completion=1 "从第2个输入字符开始匹配
+"let g:ycm_cache_omnifunc=0 "禁止缓存匹配项，每次都重新生成匹配项
+"let g:ycm_seed_identifiers_with_syntax=1 "是否开启语义补全
+"let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口
 "======================YCM config=======================
 "======================vim-javascript config=======================
 "let g:javascript_plugin_jsdoc=1 "为jsdoc文档启动语法高亮
@@ -64,7 +73,10 @@ let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预�
 "let g:javascript_plugin_flow=1 "为flow启用语法高亮
 "======================vim_javascript config=======================
 "======================NERDTree config=======================
-map <leader>b :NERDTree<CR>
-map <leader>t :NERDTreeToggle<CR>
+map <leader>b :NERDTreeToggle<CR>
+"map <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1 "显示隐藏文件
 "======================NERDTree config=======================
+"======================everforest config=======================
+"let g:everforest_better_performance=1
+"======================everforest config=======================
