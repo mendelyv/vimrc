@@ -57,6 +57,7 @@ colorscheme everforest
 
 "======================keymapping=======================
 let mapleader=";"
+imap jj <esc>
 "======================keymapping=======================
 
 "======================YCM config=======================
@@ -73,8 +74,7 @@ let mapleader=";"
 "let g:javascript_plugin_flow=1 "为flow启用语法高亮
 "======================vim_javascript config=======================
 "======================NERDTree config=======================
-map <leader>b :NERDTreeToggle<CR>
-"map <leader>t :NERDTreeToggle<CR>
+map <leader>bb :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1 "显示隐藏文件
 "======================NERDTree config=======================
 "======================everforest config=======================
