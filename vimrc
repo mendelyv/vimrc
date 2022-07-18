@@ -10,11 +10,11 @@ set number "显示行号
 set relativenumber
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
-set cursorcolumn
+"set cursorcolumn
 set autoindent "自动缩进
 set autoread "硬盘文件变化后自动读取
 set ruler "显示标尺
-set scrolloff=5 "光标在buffer中移动与顶部和底部保持5行距离
+set scrolloff=10 "光标在buffer中移动与顶部和底部保持5行距离
 set showmatch "显示括号匹配
 set autochdir "当前文件目录随着被编辑的文件改变做改变
 set ignorecase "忽略大小写
@@ -53,10 +53,9 @@ Plugin 'sainnhe/everforest',
 call vundle#end()
 filetype plugin indent on "运行vim加载文件类型插件
 
-colorscheme everforest
 
 "======================keymapping=======================
-let mapleader=";"
+let mapleader=" "
 imap jj <esc>
 "======================keymapping=======================
 
@@ -68,15 +67,44 @@ imap jj <esc>
 "let g:ycm_seed_identifiers_with_syntax=1 "是否开启语义补全
 "let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口
 "======================YCM config=======================
+
 "======================vim-javascript config=======================
 "let g:javascript_plugin_jsdoc=1 "为jsdoc文档启动语法高亮
 "let g:javascript_plugin_ngdoc=1 "为ngdoc启用语法高亮
 "let g:javascript_plugin_flow=1 "为flow启用语法高亮
 "======================vim_javascript config=======================
+
 "======================NERDTree config=======================
 map <leader>bb :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1 "显示隐藏文件
 "======================NERDTree config=======================
+
 "======================everforest config=======================
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+colorscheme everforest
 "let g:everforest_better_performance=1
+"set background=dark
+let g:everforest_background = "soft"
+"let g:everforest_disable_italic_comment=0
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 "======================everforest config=======================
+"======================coc.nvim config=======================
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-reference)
+nnoremap <silent> gh :call ShowDocumention()<cr>
+
+function! ShowDocumention()
+	if CocAction('hasProvider', 'hover')
+		call CocActionAsync('doHover')
+	else
+		call feedkeys('gh', 'in')
+	endif
+endfunction
+autocmd CursorHold * silent call CocActionAsync('highlight')
+"======================coc.nvim config=======================
