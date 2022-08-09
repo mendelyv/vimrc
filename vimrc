@@ -40,8 +40,10 @@ set foldmethod=indent "基于缩进代码折叠
 set nofoldenable "启动vim关闭折叠代码
 set termguicolors
 "set clipboard=unnamedplus
+set completeopt=menu,longest,preview "设置自动补全
 filetype on "开启文件类型检测
-
+filetype plugin on "开启文件类型插件
+filetype indent on "开启文件类型缩进
 
 "colorscheme molokai
 
