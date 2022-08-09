@@ -39,7 +39,7 @@ set noundofile "不创建撤销文件
 set foldmethod=indent "基于缩进代码折叠
 set nofoldenable "启动vim关闭折叠代码
 set termguicolors
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 filetype on "开启文件类型检测
 
 
