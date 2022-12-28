@@ -14,7 +14,7 @@ set number "显示行号
 set relativenumber "相对行号
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
-"set cursorcolumn
+set cursorcolumn
 set autoindent "自动缩进
 set autoread "硬盘文件变化后自动读取
 set ruler "显示标尺
@@ -120,7 +120,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "======================everforest config=======================
 "let &t_ZH="\e[3m"
 "let &t_ZR="\e[23m"
-"colorscheme everforest
+colorscheme desert
 "let g:everforest_better_performance=1
 "set background=dark
 "let g:everforest_background = "soft"
@@ -153,7 +153,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "let g:netrw_liststyle = 3      " 设置目录列表样式：树形
 "let g:netrw_browse_split = 4   " 在之前的窗口编辑文件
 "let g:netrw_altv = 1           " 水平分割时，文件浏览器始终显示在左边
-let g:netrw_winsize = 30       " 设置文件浏览器窗口宽度为25%
+"let g:netrw_winsize = 30       " 设置文件浏览器窗口宽度为25%
 "let g:netrw_list_hide= '^\..*' " 不显示隐藏文件 用 a 键就可以显示所有文件、 隐藏匹配文件或只显示匹配文件
 "======================netrw========================
 
