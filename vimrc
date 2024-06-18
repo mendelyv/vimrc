@@ -14,7 +14,7 @@ set number "显示行号
 set relativenumber "相对行号
 set smartindent "开启新行时使用智能缩进
 set cursorline "突出当前行
-set cursorcolumn
+"set cursorcolumn
 set autoindent "自动缩进
 set autoread "硬盘文件变化后自动读取
 set ruler "显示标尺
@@ -68,12 +68,12 @@ filetype indent on "开启文件类型缩进
 
 "======================keymapping=======================
 let mapleader=" "
-inoremap jj <esc>
+"inoremap jj <esc>
 nmap <esc> :nohlsearch<cr>
 nmap <c-h> :-tabnext<cr>
 nmap <c-l> :+tabnext<cr>
 nmap <c-q> :tabclose<cr>
-nmap <leader>bb :Lexplore<cr>
+nmap <leader>1 :Lexplore 30<cr>
 "======================keymapping=======================
 
 "======================setting=========================
@@ -92,9 +92,23 @@ hi User2 cterm=none ctermfg=208 ctermbg=0
 hi User3 cterm=none ctermfg=169 ctermbg=0
 hi User4 cterm=none ctermfg=100 ctermbg=0
 hi User5 cterm=none ctermfg=green ctermbg=0
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" ===== Set cursor shape and color =====
+" 1 -> blinking block  闪烁的方块
+" 2 -> solid block  不闪烁的方块
+" 3 -> blinking underscore  闪烁的下划线
+" 4 -> solid underscore  不闪烁的下划线
+" 5 -> blinking vertical bar  闪烁的竖线
+" 6 -> solid vertical bar  不闪烁的竖线
+if &term =~ "xterm"
+    " INSERT mode
+    let &t_SI = "\<Esc>[6 q" . "\<Esc>]12;#c5b9b3\x7"
+    " REPLACE mode
+    let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;#c5b9b3\x7"
+    " NORMAL mode
+    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;#c5b9b3\x7"
+endif
+" ===== Set cursor shape and color =====
+
 "======================setting=========================
 
 "======================YCM config=======================
